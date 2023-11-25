@@ -1,2 +1,2 @@
-my_name=" Настя "
+my_name="Валикадия"
 print (my_name)
