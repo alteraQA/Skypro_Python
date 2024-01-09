@@ -1,5 +1,4 @@
 def month_to_season(month):
-    month=int(month)
     if month in [12, 1, 2]:
         print("Зима")
     elif month in [3, 4, 5]:
