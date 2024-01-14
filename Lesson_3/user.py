@@ -3,9 +3,9 @@ class User:
         self.username=first_name
         self.usersurname=last_name
     
-    def SayName(self):
-        print("Имя: ", self.username)
-    def SaySurname(self):
+    def sayName(self):
+        print("Имя:", self.username)
+    def saySurname(self):
         print("Фамилия: ", self.usersurname)
-    def SayAll(self):
-        print("Имя и фамилия: ", self.username, self.username)
+    def sayAll(self):
+        print("Имя и фамилия:", self.username, self.usersurname)
