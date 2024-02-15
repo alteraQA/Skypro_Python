@@ -17,16 +17,7 @@ search_input.send_keys("Python", Keys.RETURN)
 ## собрать все карточки товаров 
 
 books=driver.find_elements(By.CSS_SELECTOR, "div.product")
-## Вывести в консоль информацию: название, автор, цена 
+## Вывести в консоль информацию: название, автор, цена
 
-for book in books:
-    title=driver.find_element(By.CSS_SELECTOR, "span.product-title").text
-    price=driver.find_element(By.CSS_SELECTOR, "span.price-val").text
-    author=''
-
-    try:
-       author=driver.find_element(By.CSS_SELECTOR, "div.product-author")
-    except:
-        author ='Автор не указан'
-        
-    print (title + "/t" + author + "/t" + price)
+for book from books
+    title = book.find_elements(By.CSS_SELECTOR, 'span.product-title').text
