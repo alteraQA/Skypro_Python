@@ -17,6 +17,22 @@ search_input.send_keys("Python", Keys.RETURN)
 ## собрать все карточки товаров 
 
 books = driver.find_elements(By.CSS_SELECTOR, "div.product-card")
-for book from books:
-    title=book.find_elements(By.CSS_SELECTOR, 'a.product-card__name')
 
+print(len(books)) 
+
+for book in books:
+    price=book.find_element(By.CSS_SELECTOR, "div.product-card__price-current").text
+    title = ''
+    try:
+        title=book.find_element(By.CSS_SELECTOR, "a.product-card__name").text
+    except:
+         title = 'Название не указано'
+    author = ''
+    try:
+        author=book.find_element(By.CSS_SELECTOR, "div.product-card__author").text
+    except:
+        author = 'Автор не указан'
+
+
+
+    print (author + "\t" + title + "\t"  + price)
