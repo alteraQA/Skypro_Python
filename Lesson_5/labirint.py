@@ -16,8 +16,5 @@ search_input.send_keys("Python", Keys.RETURN)
 
 ## собрать все карточки товаров 
 
-books=driver.find_elements(By.CSS_SELECTOR, "div.product")
+books=driver.find_elements(By.CSS_SELECTOR, "div.product-card")
 ## Вывести в консоль информацию: название, автор, цена
-
-for book from books
-    title = book.find_elements(By.CSS_SELECTOR, 'span.product-title').text
