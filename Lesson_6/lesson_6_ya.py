@@ -35,4 +35,4 @@ driver = webdriver.Remote(webdriver_service.service_url, options=options)
 
 make_screenshot(chrome)
 make_screenshot(ff)
-match(op)
+make_screenshot(op)
