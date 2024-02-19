@@ -8,14 +8,6 @@ from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
-from selenium import webdriver
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
-
-from selenium import webdriver
-from selenium.webdriver.chrome import service
-from webdriver_manager.opera import OperaDriverManager
-
 def make_screenshot(browser):
     browser.maximize_window()
     browser.get("http://ya.ru/")
