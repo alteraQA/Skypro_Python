@@ -10,6 +10,11 @@ from selenium import webdriver
 from selenium.webdriver.chrome import service
 from webdriver_manager.opera import OperaDriverManager
 
+webdriver_service = service.Service(OperaDriverManager().install())
+webdriver_service.start()
+
+driver = webdriver.Remote(webdriver_service.service_url, webdriver.DesiredCapabilities.OPERA)
+
 ##driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
 ##driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
