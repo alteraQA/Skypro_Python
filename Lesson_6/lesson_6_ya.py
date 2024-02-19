@@ -23,3 +23,7 @@ def make_screenshot(browser):
 Edge = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
 Firefox = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 Chrome = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
+
+make_screenshot(Chrome)
+make_screenshot(Firefox)
+make_screenshot (Edge)
