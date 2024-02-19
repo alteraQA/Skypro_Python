@@ -12,18 +12,27 @@ from selenium import webdriver
 from selenium.webdriver.edge.service import Service as EdgeService
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
+from selenium import webdriver
+from selenium.webdriver.chrome import service
+from webdriver_manager.opera import OperaDriverManager
+
 def make_screenshot(browser):
-    
     browser.maximize_window()
     browser.get("http://ya.ru/")
     sleep(3)
-    browser.save_screenshot('./test.png + driver.name')
+    browser.save_screenshot('./ya'+browser.name +'.png')
     browser.quit()
 
 chrome = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
 ff = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-eg = webdriver.Edge(EdgeChromiumDriverManager().install())
+op = webdriver_service = service.Service(OperaDriverManager().install())
+webdriver_service.start()
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option('w3c', True)
+
+driver = webdriver.Remote(webdriver_service.service_url, options=options)
 
 make_screenshot(chrome)
 make_screenshot(ff)
-make_screenshot(eg)
+match(op)
