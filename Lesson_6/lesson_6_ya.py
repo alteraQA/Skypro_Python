@@ -10,15 +10,16 @@ from webdriver_manager.firefox import GeckoDriverManager
 
 from selenium import webdriver
 from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManage
 
-driver = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+def make_screenshot(browser):
+    
+    browser.maximize_window()
+    browser.get("http://ya.ru/")
+    sleep(3)
+    browser.save_screenshot('./test.png + driver.name')
+    browser.quit()
 
-##driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-
-##driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
-
-driver.maximize_window()
-driver.get("http://ya.ru/")
-driver.save_screenshot('./test.png')
-driver.quit()
+Edge = webdriver.Edge(service=EdgeService(EdgeChromiumDriverManager().install()))
+Firefox = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
+Chrome = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
