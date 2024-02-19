@@ -25,14 +25,6 @@ def make_screenshot(browser):
 
 chrome = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install())) 
 ff = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
-op = webdriver_service = service.Service(OperaDriverManager().install())
-webdriver_service.start()
-
-options = webdriver.ChromeOptions()
-options.add_experimental_option('w3c', True)
-
-driver = webdriver.Remote(webdriver_service.service_url, options=options)
 
 make_screenshot(chrome)
 make_screenshot(ff)
-make_screenshot(op)
