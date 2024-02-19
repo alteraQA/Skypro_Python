@@ -7,13 +7,9 @@ from selenium.webdriver.firefox.service import Service as FirefoxService
 from webdriver_manager.firefox import GeckoDriverManager
 
 from selenium import webdriver
-from selenium.webdriver.chrome import service
-from webdriver_manager.opera import OperaDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
-webdriver_service = service.Service(OperaDriverManager().install())
-webdriver_service.start()
-
-driver = webdriver.Remote(webdriver_service.service_url, webdriver.DesiredCapabilities.OPERA)
+driver = webdriver.Edge(EdgeChromiumDriverManager().install())
 
 ##driver = webdriver.Firefox(service=FirefoxService(GeckoDriverManager().install()))
 
