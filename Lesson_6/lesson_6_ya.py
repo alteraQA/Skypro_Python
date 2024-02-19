@@ -8,3 +8,4 @@ driver.maximize_window()
 driver.get("http://ya.ru/")
 sleep(5)
 driver.save_screenshot('./test.jpg')
+driver.quit
